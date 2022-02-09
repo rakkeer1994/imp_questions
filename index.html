@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../../../material-icons/all.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Todo App JS</title>
+  </head>
+  <body>
+    <div class="pop-up__container" id="pop-up-window">
+      <div class="pop-up" id="newTaskList">
+        <p class="pop-up__header">Add New List</p>
+        <input
+          type="text"
+          id="input-list-name"
+          class="pop-up__input"
+          onkeydown="if (event.key == 'Enter') addNewList(this.value,this.closest('.pop-up').id)"
+        />
+        <button
+          class="pop-up__btn"
+          onclick="addNewList(document.getElementById('input-list-name').value,this.closest('.pop-up').id)"
+        >
+          ADD
+        </button>
+      </div>
+      <div class="pop-up" id="notification">
+        <a class="pop-up__close">
+          <span onclick="popupClose('notification')" class="material-icons">
+            close
+          </span>
+        </a>
+        <div class="pop-up__header">Hi, I'm todo JS 🤖</div>
+        <div class="pop-up__body">
+          <p>
+            Please show some love to my hard work and check all the codes too💖
+          </p>
+          <li class="pop-up__body--primary">
+            I've built my won library to prase objects and arrays to string and
+            reverse as replica of <code>JSON.parse()</code> and
+            <code>JSON.strinigfy()</code>
+          </li>
+          <li class="pop-up__body--secondary">
+            Made the code modular and reusable following DRY (don't repeat
+            yourself) ideology and distributed among other files
+          </li>
+          <li class="pop-up__body--primary">
+            Implemented <code>Generator function</code> for infinitely
+            generating next <code>id</code> for task-list
+          </li>
+          <li class="pop-up__body--secondary">
+            Discovered event propagation event bubbling event capture
+          </li>
+          <li class="pop-up__body--primary">
+            Used <code>SCSS</code> css preprocessor to style the elements
+          </li>
+          <li class="pop-up__body--secondary">
+            Used complex <code>Regex</code> to build the library. Learned
+            <code>Unicode</code> implementation in javascript regex
+          </li>
+          <li class="pop-up__body--tertiary">
+            Used <code>Window.sessionStorage</code> to store the data that's
+            dependent to browser's <code>tab</code> to make
+            <code>tab</code> independent just replace
+            <code>window.sessionStoreage</code> to
+            <code>window.localStoreage</code>
+          </li>
+          <li class="pop-up__body--tertiary">
+            This app has functionalities such as <br />
+            a) create a task-list b) delete task-list c) add a task d) toggle
+            task status and d) delete completed task
+          </li>
+          <li>Emojis also accepted, it works fine😋</li>
+        </div>
+      </div>
+      <div class="pop-up" id="loading-animation">
+        <div class="pop-up__body--animation material-icons"></div>
+      </div>
+    </div>
+    <main class="container">
+      <div class="todo">
+        <div class="todo__header">
+          <div class="todo__header__1">Tasks</div>
+          <div class="todo__header__2">Lists</div>
+          <div class="todo__header__3">
+            <div>
+              <div onclick="popup('newTaskList')" class="material-icons"></div>
+            </div>
+            <span>Add List</span>
+          </div>
+        </div>
+        <div class="todo__tasks"></div>
+      </div>
+    </main>
+  </body>
+  <script type="module" src="./script.js"></script>
+</html>
